@@ -2,6 +2,7 @@
 # plugins=(git svn autojump)
 
 #path=(
+#	/Users/Cyclone/bin
 #	/usr/local/bin
 #	/usr/bin
 #	/bin
@@ -10,6 +11,8 @@
 #	/usr/local/bin
 #)
 
+# 增加此项，隐藏路径前面的用户名
+# DEFAULT_USER="$(whoami)"
 DEV_DIR="$HOME/Workspace"
 WWW_DIR="$HOME/Sites"
 
