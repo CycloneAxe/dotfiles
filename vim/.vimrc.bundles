@@ -1,0 +1,6 @@
+" required!
+Bundle 'gmarik/vundle'
+
+" custom
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'https://github.com/Lokaltog/vim-powerline.git'

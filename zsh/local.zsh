@@ -4,12 +4,18 @@
 #path=(
 #	/Users/Cyclone/bin
 #	/usr/local/bin
+#	/usr/local/sbin
 #	/usr/bin
 #	/bin
 #	/usr/sbin
 #	/sbin
 #	/usr/local/bin
 #)
+
+path=(
+	/usr/local/sbin
+	$PATH
+)
 
 # 增加此项，隐藏路径前面的用户名
 # DEFAULT_USER="$(whoami)"
