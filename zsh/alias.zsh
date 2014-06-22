@@ -24,3 +24,10 @@ alias vdir="vdir $LS_OPTIONS"
 alias grep="grep $LS_OPTIONS"
 alias fgrep="fgrep $LS_OPTIONS"
 alias egrep="egrep $LS_OPTIONS"
+
+# proxy
+alias pgem='proxychains4 gem'
+
+# mysql
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
