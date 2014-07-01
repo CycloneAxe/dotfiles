@@ -14,6 +14,7 @@
 
 path=(
 	/usr/local/sbin
+	/usr/local/opt/gnu-sed/libexec/gnubin
 	$PATH
 )
 

@@ -8,8 +8,6 @@ alias vim=/usr/local/bin/vim
 alias javac='javac -J-Dfile.encoding=UTF-8 -encoding UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 
-alias art='php artisan'
-
 # ls colors
 if brew list | grep coreutils > /dev/null; then
 	PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -31,3 +29,22 @@ alias pgem='proxychains4 gem'
 # mysql
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+
+# Generator Stuff
+alias g:m="php artisan generate:model"
+alias g:c="php artisan generate:controller"
+alias g:v="php artisan generate:view"
+alias g:s="php artisan generate:seed"
+alias g:mig="php artisan generate:migration"
+alias g:r="php artisan generate:resource"
+
+# rm
+function __protect_rm {
+	#filename=${@:-1}
+	suffix=`date +%y_%m_%d_%H_%I_%S`
+	filename=$@.$suffix
+	dir=~/.Trash/rmData/$filename
+	[[ -d $dir ]] || mkdir -p $dir
+	mv --target-directory $dir $@
+}
+alias rm='__protect_rm'
