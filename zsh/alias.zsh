@@ -51,6 +51,7 @@ function __protect_rm {
 
 	dir=~/.Trash/rmData/$sub_dir
 	[[ -d $dir ]] || mkdir -p $dir
+	echo "rm $@" >> $dir/__command.txt
 	cmd="mv --target-directory $dir $args"
 	eval $cmd
 }
