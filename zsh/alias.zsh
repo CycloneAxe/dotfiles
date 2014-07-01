@@ -40,11 +40,18 @@ alias g:r="php artisan generate:resource"
 
 # rm
 function __protect_rm {
-	#filename=${@:-1}
-	suffix=`date +%y_%m_%d_%H_%I_%S`
-	filename=$@.$suffix
-	dir=~/.Trash/rmData/$filename
+	args="$@"
+	sub_dir=`date +%y_%m_%d_%H_%M_%S`
+
+	if [ "$#"x != "1"x ]; then
+		if [ "${args:0:1}"x = "-"x ]; then
+			args="${@:2}"
+		fi
+	fi
+
+	dir=~/.Trash/rmData/$sub_dir
 	[[ -d $dir ]] || mkdir -p $dir
-	mv --target-directory $dir $@
+	cmd="mv --target-directory $dir $args"
+	eval $cmd
 }
 alias rm='__protect_rm'
