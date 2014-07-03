@@ -40,11 +40,11 @@ alias g:r="php artisan generate:resource"
 
 # rm
 function __protect_rm {
-	sub_dir=`date +%y_%m_%d_%H_%M_%S`
+	local sub_dir=`date +%y_%m_%d_%H_%M_%S`
 
 	[[ ${1:0:1} == "-" ]] && shift
 
-	dir=~/.Trash/rmData/$sub_dir
+	local dir=~/.Trash/rmData/$sub_dir
 	[[ -d $dir ]] || mkdir -p $dir
 	echo "rm $@" >> $dir/__command.txt
 	mv --target-directory $dir "$@"

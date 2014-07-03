@@ -29,8 +29,8 @@ hash -d laravel="$DEV_DIR/laravel"
 hash -d github="$DEV_DIR/github"
 
 function tree() {
-	_args="$@"
-	_path=${_args:-.}
+	local _args="$@"
+	local _path=${_args:-.}
 
 	find "$_path" -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 }
