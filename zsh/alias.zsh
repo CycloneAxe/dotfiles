@@ -40,21 +40,14 @@ alias g:r="php artisan generate:resource"
 
 # rm
 function __protect_rm {
-	local sub_dir=`date +%Y/%m/%d_%H_%M_%S`
+	local DESTFILE=~/.Trash/rmData
+	local DESTDIR=$DESTFILE/`date +%Y/%m/%d_%H_%M_%S`
 
 	[[ ${1:0:1} == "-" ]] && shift
-
 	[ "$#" = 0 ] && return 1
 
-	local dir=~/.Trash/rmData/$sub_dir
-	[[ -d $dir ]] || mkdir -p $dir
-	mv --target-directory $dir "$@"
-	if [ $? -eq 0 ]; then
-		echo "rm $@" >> $dir/__command.txt
-	else
-		echo "error code: "$? >> $dir/__error.txt
-		return 2
-	fi
-	return 0
+	[[ -d "$DESTDIR" ]] || mkdir -p "$DESTDIR"
+	mv "$@" "$DESTDIR" && echo "$0 $@" >> "$DESTDIR/__command.txt"
+	return $?
 }
 alias rm='__protect_rm'
