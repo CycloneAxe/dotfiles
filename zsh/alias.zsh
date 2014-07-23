@@ -51,3 +51,5 @@ function __protect_rm {
 	return $?
 }
 alias rm='__protect_rm'
+
+alias videoDownload='python3 ~github/you-get/you-get'
