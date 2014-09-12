@@ -27,8 +27,11 @@ alias egrep="egrep $LS_OPTIONS"
 alias pgem='proxychains4 gem'
 
 # mysql
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+# alias mysql=/usr/local/mysql/bin/mysql
+# alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias mysqladmin=/usr/local/Cellar/mysql/5.6.20/bin/mysqladmin
+alias mysql=/usr/local/Cellar/mysql/5.6.20/bin/mysql
+# /usr/local/Cellar/mysql/5.6.20/bin/mysql_secure_installation
 
 # Generator Stuff
 alias g:m="php artisan generate:model"
@@ -53,3 +56,4 @@ function __protect_rm {
 alias rm='__protect_rm'
 
 alias videoDownload='python3 ~github/you-get/you-get'
+alias gulp="gulp --require coffee-script/register"
