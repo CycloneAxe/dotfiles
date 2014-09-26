@@ -7,6 +7,7 @@ alias vim=/usr/local/bin/vim
 # encoding
 alias javac='javac -J-Dfile.encoding=UTF-8 -encoding UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
+alias jdb='jdb -J-Dfile.encoding=UTF-8 -encoding UTF-8'
 
 # ls colors
 if brew list | grep coreutils > /dev/null; then
