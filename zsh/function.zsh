@@ -1,11 +1,12 @@
 # 树形打印目录
+# brew install tree
 # usage: "tree" or "tree /tmp/"
-function tree() {
-	local _args="$@"
-	local _path=${_args:-.}
+# function tree() {
+# 	local _args="$@"
+# 	local _path=${_args:-.}
 
-	find "$_path" -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-}
+# 	find "$_path" -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+# }
 
 # 查看端口
 # usage: "port 8000"

@@ -4,10 +4,14 @@ alias mou='open -a "Mou"'
 alias vi='vim'
 alias vim=/usr/local/bin/vim
 
+alias -s rb=ruby
+alias -s php=php
+alias -s py=python3
+
 # encoding
 alias javac='javac -J-Dfile.encoding=UTF-8 -encoding UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
-alias jdb='jdb -J-Dfile.encoding=UTF-8 -encoding UTF-8'
+# alias jdb='jdb -J-Dfile.encoding=UTF-8 -encoding UTF-8'
 
 # ls colors
 if brew list | grep coreutils > /dev/null; then
@@ -24,17 +28,14 @@ alias grep="grep $LS_OPTIONS"
 alias fgrep="fgrep $LS_OPTIONS"
 alias egrep="egrep $LS_OPTIONS"
 
-# proxy
+# Proxy
 alias pgem='proxychains4 gem'
 
-# mysql
-# alias mysql=/usr/local/mysql/bin/mysql
-# alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-alias mysqladmin=/usr/local/Cellar/mysql/5.6.20/bin/mysqladmin
-alias mysql=/usr/local/Cellar/mysql/5.6.20/bin/mysql
-# /usr/local/Cellar/mysql/5.6.20/bin/mysql_secure_installation
+# MySQL
+alias mysql=/usr/local/opt/mysql/bin/mysql
+alias mysqladmin=/usr/local/opt/mysql/bin/mysqladmin
 
-# Generator Stuff
+# Laravel Generator Stuff
 alias g:m="php artisan generate:model"
 alias g:c="php artisan generate:controller"
 alias g:v="php artisan generate:view"
@@ -42,7 +43,7 @@ alias g:s="php artisan generate:seed"
 alias g:mig="php artisan generate:migration"
 alias g:r="php artisan generate:resource"
 
-# rm
+# safe rm
 function __protect_rm {
 	local DESTFILE=~/.Trash/rmData
 	local DESTDIR=$DESTFILE/`date +%Y/%m/%d_%H_%M_%S`
@@ -58,3 +59,7 @@ alias rm='__protect_rm'
 
 alias videoDownload='python3 ~github/you-get/you-get'
 alias gulp="gulp --require coffee-script/register"
+
+
+# Android
+alias 9patch="open /usr/local/opt/android-sdk/tools/draw9patch"
