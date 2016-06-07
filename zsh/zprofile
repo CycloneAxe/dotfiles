@@ -1,0 +1,27 @@
+# Executes commands at login pre-zshrc.
+
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
+# export PATH="/usr/local/sbin:$PATH"
+path=(
+  /usr/local/{bin,sbin}
+  $path
+)
+
+#
+# Language
+#
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+
+# Ruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# Ruby default version
+chruby ruby-2.3.0
+
+# Node
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh

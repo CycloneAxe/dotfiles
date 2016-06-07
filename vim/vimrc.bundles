@@ -1,0 +1,48 @@
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+let g:bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc']
+
+" Deps {
+    if executable('ag')
+        Plugin 'mileszs/ack.vim'
+        let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+    elseif executable('ack-grep')
+        let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+        Plugin 'mileszs/ack.vim'
+    elseif executable('ack')
+        Plugin 'mileszs/ack.vim'
+    endif
+" }
+
+" General {
+
+	if count(g:bundle_groups, 'general')
+		Plugin 'altercation/vim-colors-solarized'
+		Plugin 'Lokaltog/vim-powerline'
+		Plugin 'scrooloose/nerdtree'
+		Plugin 'jistr/vim-nerdtree-tabs'
+        Plugin 'terryma/vim-multiple-cursors'
+        Plugin 'vim-scripts/sessionman.vim'
+		Plugin 'sjl/gundo.vim'
+		Plugin 'asins/vimcdoc'				" Chinese document
+		Plugin 'easymotion/vim-easymotion'
+	endif
+
+" }
+
+" General Programming {
+
+	if count(g:bundle_groups, 'programming')
+		if executable('ctags')
+			Plugin 'majutsushi/tagbar'
+		endif
+	endif
+
+" }
