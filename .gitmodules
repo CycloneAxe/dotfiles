@@ -1,3 +1,6 @@
 [submodule "zsh-syntax-highlighting"]
     path = zsh/custom/plugins/zsh-syntax-highlighting
     url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "laravel"]
+	path = zsh/custom/plugins/laravel
+	url = https://github.com/shengyou/laravel-zsh-plugin.git
